@@ -8,6 +8,10 @@ import { useStyles } from './app.styles';
 import { rootReducer } from './store/root.reducer';
 
 import ErrorBoundary from './components/common/ErrorBoundary';
+import MainPlayingField from './components/common/MainPlayingField';
+import ArrowField from './components/common/ArrowField';
+import Title from './components/common/Title';
+import ControlBlock from './components/common/ControlBlock';
 
 export const store = createStore(rootReducer, composeWithDevTools());
 
@@ -19,14 +23,10 @@ export const App = () => {
       <CssBaseline />
       <Provider store={store}>
         <div className={classes.container}>
-          <div>Лабиринт</div>
-          <div>
-            <span>Выбрать размер (2 инпута)</span>
-            <span>Выбрать количество ходов (1 инпут)</span>
-            <span>Старт</span>
-          </div>
-          <div>Игровое поле</div>
-          <div>Поле со стрелками</div>
+          <Title />
+          <ControlBlock />
+          <MainPlayingField />
+          <ArrowField />
         </div>
       </Provider>
     </ErrorBoundary>
