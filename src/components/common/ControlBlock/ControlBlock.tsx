@@ -1,13 +1,14 @@
 import * as React from 'react';
+import ColumnSelector from './ColumnSelector';
+import LineSelector from './LineSelector';
+import StartButton from './StartButton';
+import StepSelector from './StepSelector';
 
-export const ControlBlock = () => {
-  //
-
-  return (
-    <div>
-      <span>Выбрать размер (2 инпута)</span>
-      <span>Выбрать количество ходов (1 инпут)</span>
-      <span>Старт</span>
-    </div>
-  );
-};
+export const ControlBlock = () => (
+  <div>
+    <ColumnSelector />
+    <LineSelector />
+    <StepSelector />
+    <StartButton />
+  </div>
+);
