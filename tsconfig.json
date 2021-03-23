@@ -8,5 +8,5 @@
     "module": "commonjs",
     "jsx": "react"
   },
-  "include": ["src", "./src/declaration.d.ts"]
+  "include": ["src", "src/types/*"]
 }
