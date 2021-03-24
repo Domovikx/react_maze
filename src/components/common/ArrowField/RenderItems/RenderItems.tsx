@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import Grow from '@material-ui/core/Grow';
 import { useStyles } from './RenderItems.styles';
@@ -17,22 +17,18 @@ export const RenderItems = () => {
 
   return (
     <div className={classes.root}>
-      <div className={classes.container}>
-        {gameStepsData.map((item, idx) => {
-          return (
-            <Grow
-              in={true}
-              style={{ transformOrigin: '0 0 0' }}
-              timeout={random(700, 2500)}
-              key={uid(3)}
-            >
-              <Paper elevation={4} className={classes.paper}>
-                {item.direction}
-              </Paper>
-            </Grow>
-          );
-        })}
-      </div>
+      {gameStepsData.map((item) => {
+        return (
+          <Grow
+            in={true}
+            style={{ transformOrigin: '0 0 0' }}
+            timeout={random(700, 2500)}
+            key={uid(16)}
+          >
+            <Paper elevation={4}>{item.direction}</Paper>
+          </Grow>
+        );
+      })}
     </div>
   );
 };
