@@ -29,7 +29,7 @@ export const MainPlayingField = () => {
           <TableRow key={idxRow}>
             {row.map((cell, idxCell) => (
               <TableCell key={idxCell}>
-                <FieldCell col={cell[0]} row={cell[0]} />
+                <FieldCell row={cell[0]} col={cell[1]} />
               </TableCell>
             ))}
           </TableRow>

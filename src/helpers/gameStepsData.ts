@@ -1,3 +1,4 @@
+import { GameStepsData } from 'store/gameData/gameData.types';
 import { DIRECTION } from './gameStepsData.types';
 
 const random = (min, max) => Math.round(min + Math.random() * (max - min));
@@ -41,8 +42,12 @@ const getNextStep = (currentPosition, lines, columns) => {
   };
 };
 
-export const gameStepsData = (lines = 3, columns = 3, steps = 10) => {
-  const gameSteps = Array.from({ length: steps }, () => ({
+export const getGameStepsData = (
+  lines: number,
+  columns: number,
+  steps: number,
+) => {
+  const gameSteps: GameStepsData = Array.from({ length: steps }, () => ({
     row: 0,
     col: 0,
     direction: '',
