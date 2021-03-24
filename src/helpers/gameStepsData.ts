@@ -1,7 +1,8 @@
 import { GameStepsData } from 'store/gameData/gameData.types';
 import { DIRECTION } from './gameStepsData.types';
 
-const random = (min, max) => Math.round(min + Math.random() * (max - min));
+export const random = (min, max) =>
+  Math.round(min + Math.random() * (max - min));
 
 const getFirstCell = (lines, columns) => ({
   row: random(0, lines - 1),
