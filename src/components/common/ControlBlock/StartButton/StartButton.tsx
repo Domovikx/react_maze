@@ -1,9 +1,13 @@
 import * as React from 'react';
 import { Button } from '@material-ui/core';
 import { getGameStepsData } from '../../../../helpers/gameStepsData';
-import { setGameStepsDataAction } from '../../../../store/gameData/gameData.actions';
+import {
+  setGamePhaseAction,
+  setGameStepsDataAction,
+} from '../../../../store/gameData/gameData.actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../../store/root.reducer';
+import { GAME_PHASES } from '../../../../store/gameData/gameData.types';
 
 export const StartButton = () => {
   const dispatch = useDispatch();
@@ -19,6 +23,8 @@ export const StartButton = () => {
       Number(steps),
     );
 
+    dispatch(setGamePhaseAction(GAME_PHASES.CLEAR));
+    dispatch(setGamePhaseAction(GAME_PHASES.IN_PROGRESS));
     dispatch(setGameStepsDataAction(gameStepsData));
   };
 

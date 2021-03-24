@@ -22,7 +22,7 @@ const getNextStep = (currentPosition, lines, columns) => {
     do {
       nextRow = random(
         curRow - 1 >= 0 ? curRow - 1 : curRow,
-        curRow + 1 <= lines ? curRow + 1 : curRow,
+        curRow + 1 <= lines - 1 ? curRow + 1 : curRow,
       );
       direction = nextRow > curRow ? DIRECTION.DOWN : DIRECTION.UP;
     } while (nextRow === curRow);
@@ -30,7 +30,7 @@ const getNextStep = (currentPosition, lines, columns) => {
     do {
       nextCol = random(
         curCol - 1 >= 0 ? curCol - 1 : curCol,
-        curCol + 1 <= columns ? curCol + 1 : curCol,
+        curCol + 1 <= columns - 1 ? curCol + 1 : curCol,
       );
       direction = nextCol > curCol ? DIRECTION.RIGHT : DIRECTION.LEFT;
     } while (nextCol === curCol);

@@ -17,6 +17,7 @@ export type GameStepsData = {
 export enum GAME_PHASES {
   IN_PROGRESS = 'GAME_PHASES.IN_PROGRESS',
   FINISH = 'GAME_PHASES.FINISH',
+  CLEAR = 'GAME_PHASES.CLEAR',
 }
 
 export type GameDataAction =
@@ -31,5 +32,5 @@ export type GameDataAction =
 
 export interface Payload {
   gameStepsData?: GameStepsData;
-  gamePhase?: GAME_PHASES.FINISH | GAME_PHASES.IN_PROGRESS;
+  gamePhase?: GAME_PHASES.FINISH | GAME_PHASES.IN_PROGRESS | GAME_PHASES.CLEAR;
 }
