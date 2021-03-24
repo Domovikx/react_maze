@@ -14,7 +14,3 @@ export const setStepsAction = (value: string) => ({
   payload: { value },
   type: CONTROL_BLOCK.SET_STEPS,
 });
-
-export const startGameAction = () => ({
-  type: CONTROL_BLOCK.START_GAME,
-});

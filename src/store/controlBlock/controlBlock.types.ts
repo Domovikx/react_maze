@@ -2,7 +2,6 @@ export enum CONTROL_BLOCK {
   SET_COLUMNS = 'CONTROL_BLOCK.SET_COLUMNS',
   SET_LINES = 'CONTROL_BLOCK.SET_LINES',
   SET_STEPS = 'CONTROL_BLOCK.SET_STEPS',
-  START_GAME = 'CONTROL_BLOCK.START_GAME',
 }
 
 export interface ControlBlockState {
@@ -14,23 +13,17 @@ export interface ControlBlockState {
 export type ControlBlockAction =
   | {
       type: CONTROL_BLOCK.SET_COLUMNS;
-      payload: {
-        value: string;
-      };
+      payload: Payload;
     }
   | {
       type: CONTROL_BLOCK.SET_LINES;
-      payload: {
-        value: string;
-      };
+      payload: Payload;
     }
   | {
       type: CONTROL_BLOCK.SET_STEPS;
-      payload: {
-        value: string;
-      };
-    }
-  | {
-      type: CONTROL_BLOCK.START_GAME;
-      payload: any;
+      payload: Payload;
     };
+
+export interface Payload {
+  value?: string;
+}
