@@ -8,5 +8,13 @@ export const useStyles = makeStyles(() => ({
     height: '100vh',
     backgroundImage: `url(${image})`,
     backgroundSize: 'cover',
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  wrapper: {
+    maxWidth: '600px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
 }));

@@ -23,10 +23,12 @@ export const App = () => {
       <CssBaseline />
       <Provider store={store}>
         <div className={classes.container}>
-          <Title />
-          <ControlBlock />
-          <MainPlayingField />
-          <ArrowField />
+          <div className={classes.wrapper}>
+            <Title />
+            <ControlBlock />
+            <MainPlayingField />
+            <ArrowField />
+          </div>
         </div>
       </Provider>
     </ErrorBoundary>

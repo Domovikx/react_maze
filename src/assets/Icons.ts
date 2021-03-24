@@ -7,6 +7,7 @@ import {
 } from '@material-ui/icons';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
+import NavigationIcon from '@material-ui/icons/Navigation';
 
 export {
   CloseIcon,
@@ -16,4 +17,5 @@ export {
   VisibilityOffIcon,
   LocationOnIcon,
   InsertEmoticonIcon,
+  NavigationIcon,
 };

@@ -7,6 +7,8 @@ import { useSelector } from 'react-redux';
 import { RootState } from 'store/root.reducer';
 import { random } from '../../../../helpers/gameStepsData';
 import { uid } from 'uid';
+import { DIRECTION } from '../../../../helpers/gameStepsData.types';
+import { LocationOnIcon, NavigationIcon } from '../../../../assets/Icons';
 
 export const RenderItems = () => {
   const classes = useStyles();
@@ -25,7 +27,19 @@ export const RenderItems = () => {
             timeout={random(700, 2500)}
             key={uid(16)}
           >
-            <Paper elevation={4}>{item.direction}</Paper>
+            <Paper elevation={4} className={classes.paper}>
+              {item.direction === DIRECTION.START && <LocationOnIcon />}
+              {item.direction === DIRECTION.UP && <NavigationIcon />}
+              {item.direction === DIRECTION.RIGHT && (
+                <NavigationIcon className={classes.rotateRight} />
+              )}
+              {item.direction === DIRECTION.DOWN && (
+                <NavigationIcon className={classes.rotateDown} />
+              )}
+              {item.direction === DIRECTION.LEFT && (
+                <NavigationIcon className={classes.rotateLeft} />
+              )}
+            </Paper>
           </Grow>
         );
       })}
